@@ -1,29 +1,29 @@
 SRC_PLAY = playmusic.cpp
-SRC_DECRYPT = decrypt.cpp
+SRC_LEETFIND = leetfind.cpp
 
-NAME_PLAY = play
-NAME_DECRYPT = decrypt
+NAME_PLAY = fgses
+NAME_LEETFIND = leetfind
 
 CC = g++
 LIB = -lreadline
 CFLAGS = -Wall -Wextra -Werror -std=c++11 -g
 
-all: ${NAME_PLAY} ${NAME_DECRYPT}
+all: ${NAME_PLAY} ${NAME_LEETFIND}
 
 ${NAME_PLAY}: ${SRC_PLAY}
 	@${CC} ${CFLAGS} ${SRC_PLAY} -o ${NAME_PLAY} ${LIB}
-	@echo "Compiled play"
+	@echo "Compiled fgses"
 
-${NAME_DECRYPT}: ${SRC_DECRYPT}
-	@${CC} ${CFLAGS} ${SRC_DECRYPT} -o ${NAME_DECRYPT} ${LIB}
-	@echo "Compiled decrypt"
+${NAME_LEETFIND}: ${SRC_LEETFIND}
+	@${CC} ${CFLAGS} ${SRC_LEETFIND} -o ${NAME_LEETFIND} ${LIB}
+	@echo "Compiled leetfind"
 
 clean:
 	@rm -rf *.dSYM
 	@echo "Cleaned"
 
 fclean: clean
-	@rm -f ${NAME_PLAY} ${NAME_DECRYPT}
+	@rm -f ${NAME_PLAY} ${NAME_LEETFIND}
 	@echo "Removed executables"
 
 re: clean all
